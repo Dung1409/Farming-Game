@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0081873dd87cbb4fa80492a24bff4df, type: 3}
+  m_Name: Item
+  m_EditorClassIdentifier: 
+  items:
+  - icon: {fileID: -446489938, guid: 1fa772bd520c97a418f4c4c56c2a41c3, type: 3}
+    Name: Water
+    isTool: 1
+    tool: {fileID: 3563342794807808320, guid: 35c5a6527a0ebe7459c7b9bc8e2512da, type: 3}
+  - icon: {fileID: 1158444376, guid: 1fa772bd520c97a418f4c4c56c2a41c3, type: 3}
+    Name: Hammer
+    isTool: 1
+    tool: {fileID: 7351845922969188693, guid: a6e99b9a9f2d8244e9cf8baaaab93215, type: 3}
+  - icon: {fileID: -2120328790, guid: 1fa772bd520c97a418f4c4c56c2a41c3, type: 3}
+    Name: Ax
+    isTool: 1
+    tool: {fileID: 5128764882696066093, guid: 2ab8160a56f6bbf4b99a62fa68dfd2f5, type: 3}
+  - icon: {fileID: -1439528838, guid: 1fa772bd520c97a418f4c4c56c2a41c3, type: 3}
+    Name: Hoe
+    isTool: 1
+    tool: {fileID: 708102001572907588, guid: 93646c340c700e847ab03577b349dc76, type: 3}
+  - icon: {fileID: -232609490, guid: 1fa772bd520c97a418f4c4c56c2a41c3, type: 3}
+    Name: Egg
+    isTool: 0
+    tool: {fileID: 0}
+  - icon: {fileID: -950263399, guid: 1fa772bd520c97a418f4c4c56c2a41c3, type: 3}
+    Name: Cotton
+    isTool: 0
+    tool: {fileID: 0}
+  - icon: {fileID: -1750547113, guid: 1fa772bd520c97a418f4c4c56c2a41c3, type: 3}
+    Name: Milk
+    isTool: 0
+    tool: {fileID: 0}
+  - icon: {fileID: 70167348, guid: 3a3128edf739d564181d92598e65cbd3, type: 3}
+    Name: Pumpkin
+    isTool: 0
+    tool: {fileID: 0}
+  - icon: {fileID: 1148457805, guid: 3a3128edf739d564181d92598e65cbd3, type: 3}
+    Name: Potato
+    isTool: 0
+    tool: {fileID: 0}
+  - icon: {fileID: 724685209, guid: 3a3128edf739d564181d92598e65cbd3, type: 3}
+    Name: Carrot
+    isTool: 0
+    tool: {fileID: 0}

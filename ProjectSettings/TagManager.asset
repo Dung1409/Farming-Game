@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Grid
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Map
+    uniqueID: 800712543
+    locked: 0
+  - name: Soil
+    uniqueID: 1064121
+    locked: 0
+  - name: Obstacal
+    uniqueID: 2732771187
+    locked: 0
+  - name: Object
+    uniqueID: 4254224187
+    locked: 0
+  - name: Tree
+    uniqueID: 276167317
+    locked: 0
+  - name: UI
+    uniqueID: 1288836905
+    locked: 0
