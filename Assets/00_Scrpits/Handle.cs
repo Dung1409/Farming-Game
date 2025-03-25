@@ -11,8 +11,10 @@ public class Handle : MonoBehaviour
 
     private Dictionary<int, Item> tools = new Dictionary<int, Item>();
     private Dictionary<int, GameObject> ToolObject = new Dictionary<int, GameObject>();
-    private List<KeyCode> key = new List<KeyCode>() {KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4};
+    private List<KeyCode> keyTool = new List<KeyCode>() {KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4};
     
+
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -20,9 +22,9 @@ public class Handle : MonoBehaviour
 
     private void Update()
     {
-        for(int i = 0; i < key.Count; i++) 
+        for(int i = 0; i < keyTool.Count; i++) 
         {
-            if (Input.GetKeyDown(key[i]))
+            if (Input.GetKeyDown(keyTool[i]))
             {   
                 if(_tool != null)
                 {
