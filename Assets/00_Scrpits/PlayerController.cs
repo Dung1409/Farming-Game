@@ -9,18 +9,19 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rigi;
     private Animator _anim;
     private State state;
-
+    private SpriteRenderer _render;
     private void Awake()
     {
         state = State.Idle;
         _rigi = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
-        
+        _render = GetComponent<SpriteRenderer>();   
     }
 
     private void FixedUpdate()
     {
-        Move();        
+        Move();   
+             
     }
 
 
@@ -36,11 +37,11 @@ public class PlayerController : MonoBehaviour
         }
         if(dir.x > 0) 
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            _render.flipX = false;
         }
         else if(dir.x < 0)
         {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+            _render.flipX = true;
         }
         _rigi.velocity = dir * speed;   
         _anim.SetInteger(Contant.State, (int)state);    

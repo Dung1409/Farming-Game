@@ -18,7 +18,7 @@ public class Watering : Tool
     public override void getProp()
     {
         remainingWater = maxVolume / 2;
-        waterMap = Grid.transform.GetChild(5).GetComponent<Tilemap>();
+        waterMap = GameManager.intant.WaterMap;
     }
 
     public override void Handler()

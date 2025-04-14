@@ -14,7 +14,7 @@ public class Hammer : Tool
 
     public override void getProp()
     {
-        Obstacal = Grid.transform.GetChild(1).GetComponent<Tilemap>(); 
+        Obstacal = GameManager.intant.Obstacal; 
     }
 
     public override void Handler()

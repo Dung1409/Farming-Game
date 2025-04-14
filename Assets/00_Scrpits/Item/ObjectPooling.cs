@@ -8,21 +8,24 @@ public class ObjectPooling : Singleton<ObjectPooling>
    
     public GameObject CreateGameObject(GameObject g)
     {
-        if(!pool.ContainsKey(g)) pool[g] = new List<GameObject>();
+        if (!pool.ContainsKey(g)) 
+        {
+            pool[g] = new List<GameObject>();
+        }
+
         foreach(GameObject i in pool[g])
         {
-            if (g.activeSelf)
+            if (i.activeSelf)
             {
-                
                 continue;
             }
-            else
-            {
-                i.transform.gameObject.SetActive(true);
-                return i;
-            }
+            
+            i.transform.gameObject.SetActive(true);
+            return i;
         }
+
         GameObject gameObject = Instantiate(g);
+        gameObject.name = g.name;
         pool[g].Add(gameObject);
         return gameObject;
     }

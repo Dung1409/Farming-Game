@@ -17,6 +17,7 @@ public class InventoryManager : Singleton<InventoryManager>
         base.Start();
         for(int i = 0; i < InventorySlot.Count; i++)
         {
+            
             Sprite icon = InventorySlot[i].transform.GetChild(1).GetComponent<Image>().sprite;
             if (ItemDB.items[i].isTool) 
             {
