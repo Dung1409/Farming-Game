@@ -27,14 +27,13 @@ public class UIManager : Singleton<UIManager>
         AnimalInfo.SetActive(false);    
     }
 
-    public void ShowMessage(int value)
+    public void ShowMessage(string mes)
     {
         if (notify == null)
         {
             return;
         }
-        notify.text = "+" + value.ToString();
-        Debug.Log(notify.text); 
+        notify.text = mes;
         notify.transform.localScale = Vector3.one;
         notify.GetComponent<Animator>().Play(0);
     }
@@ -42,7 +41,7 @@ public class UIManager : Singleton<UIManager>
     public void LoadData(Sprite icon , float curEnergy , float curHealth , float curGrowth)
     {
         Icon.sprite = icon;
-        EnergySilder.value = curEnergy;
+        
         HealthSlider.value = curHealth;
         GrowthSlider.value = curGrowth; 
     }

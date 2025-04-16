@@ -5,7 +5,6 @@ using UnityEngine.EventSystems;
 
 public interface IAnimal
 {
-    void Feed();
     void Cure();
     void Exit();
 }

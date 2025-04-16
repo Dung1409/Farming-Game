@@ -15,6 +15,7 @@ public class GameManager : Singleton<GameManager>
     public Tilemap Interface;
     public Tilemap Obstacal;
     public Tilemap WaterMap;
+    public Tilemap Glass;
     #endregion
 
     public TextMeshProUGUI OrderMessage;
@@ -23,7 +24,7 @@ public class GameManager : Singleton<GameManager>
     
     [SerializeField] private int quantity;
     [SerializeField] private string item;
-    [SerializeField] private int Coin = 0;
+    
     
     protected override void Start()
     {
@@ -36,10 +37,11 @@ public class GameManager : Singleton<GameManager>
     private void getGrid()
     {
         grid = GameObject.FindWithTag("Grid");
-        Obstacal = grid.transform.GetChild(1).GetComponent<Tilemap>();
-        Interface = grid.transform.GetChild(3).GetComponent<Tilemap>();
-        Soil = grid.transform.GetChild(4).GetComponent<Tilemap>();
-        WaterMap = grid.transform.GetChild(5).GetComponent<Tilemap>();
+        Obstacal = GameObject.FindGameObjectWithTag(Contant.Obstacal).GetComponent<Tilemap>();
+        Interface = GameObject.FindGameObjectWithTag(Contant.Interface).GetComponent<Tilemap>();
+        Soil = GameObject.FindGameObjectWithTag(Contant.Soil).GetComponent<Tilemap>();
+        WaterMap = GameObject.FindGameObjectWithTag(Contant.WaterMap).GetComponent<Tilemap>();
+        Glass = GameObject.FindGameObjectWithTag(Contant.Glass).GetComponent<Tilemap>();
     }
 
     public void ResultOrder(string orderMess)
@@ -71,8 +73,8 @@ public class GameManager : Singleton<GameManager>
         if (AssetsItem[item].quantity >= quantity)
         {
             AssetsItem[item].quantity -= quantity;
-            Coin += quantity * 10;
-            UIManager.intant.ShowMessage(quantity * 10);
+            ShopManager.intant.UpdateCoin(quantity * 10);
+            UIManager.intant.ShowMessage("+" + (quantity * 10).ToString());
             item = "";
             LoadOrder();
         }

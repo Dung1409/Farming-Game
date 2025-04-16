@@ -10,4 +10,9 @@ public class Contant
     public static string Watering = "Watering";
     public static string Hammer = "Hammer";
     public static string Hoe = "Hoe";
+    public static string Glass = "Glass";
+    public static string Soil = "Soil";
+    public static string Obstacal = "Obstacal";
+    public static string Interface = "Interface";
+    public static string WaterMap = "WaterMap";
 }

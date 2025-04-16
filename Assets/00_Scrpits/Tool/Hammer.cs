@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 
 public class Hammer : Tool
@@ -20,7 +21,7 @@ public class Hammer : Tool
     public override void Handler()
     {
         
-        if(Input.GetMouseButtonDown(0)) 
+        if(Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject()) 
         {
             hand.anim.SetInteger(Contant.State, 1);
             Vector3Int mousePos = Obstacal.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));

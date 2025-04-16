@@ -23,15 +23,12 @@ public class Hoe : Tool
             return;
         }
         
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            if (!EventSystem.current.IsPointerOverGameObject())
-            {
-                CanDraw = true;
-                hand.anim.SetInteger(Contant.State, 1);
-                mouseStart = Soil.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition)); 
-                isHandle = true;
-            }
+            CanDraw = true;
+            hand.anim.SetInteger(Contant.State, 1);
+            mouseStart = Soil.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition)); 
+            isHandle = true;
         }
 
         else if (Input.GetMouseButton(0) && isHandle)

@@ -10,14 +10,17 @@ public class Seed : MonoBehaviour , IPointerDownHandler, IPointerUpHandler , IDr
 {
     RectTransform rectTransform;
     Vector3 startPos;
-    [SerializeField] GameObject vegetable;
+    public GameObject vegetable;
     [SerializeField] private Tilemap soil;
-
+    public int seed = 30;
+    public int curSeed;
+    public string name;
     private void Start()
     {
+       curSeed = seed;
        rectTransform = GetComponent<RectTransform>();
        startPos = transform.position;
-       
+       name = vegetable.name;
     }
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -32,6 +35,11 @@ public class Seed : MonoBehaviour , IPointerDownHandler, IPointerUpHandler , IDr
         Vector3Int mousePos = soil.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         if(soil.GetTile(mousePos) != null && (!GameManager.intant.tilePos.ContainsKey(mousePos) || GameManager.intant.tilePos[mousePos] == false)) 
         {
+            if(seed <= 0)
+            {
+                return;
+            }
+            seed -= 1;
             GameObject g = ObjectPooling.intant.CreateGameObject(vegetable);
             g.transform.position = soil.CellToWorld(mousePos) + new Vector3(0.5f, 0.5f, 0);
             GameManager.intant.tilePos[mousePos] = true;
@@ -42,6 +50,7 @@ public class Seed : MonoBehaviour , IPointerDownHandler, IPointerUpHandler , IDr
     {
         rectTransform.transform.position = startPos;
         Handle.isSeed = false;
+        curSeed = seed;
     }
 
 
