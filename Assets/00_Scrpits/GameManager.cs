@@ -97,7 +97,7 @@ public class GameManager : Singleton<GameManager>
         if (!AssetsItem.ContainsKey(name))
         {
             AssetsItem.Add(name, p);
-            UIManager.intant.ShowProduct(p.Icon.sprite);
+            UIManager.intant.ShowProduct(p.Icon.sprite , name);
         }
         AssetsItem[name].quantity += 1;
     }

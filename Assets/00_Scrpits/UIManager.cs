@@ -53,10 +53,11 @@ public class UIManager : Singleton<UIManager>
         Exit.onClick.RemoveAllListeners();
     }
 
-    public void ShowProduct(Sprite icon)
+    public void ShowProduct(Sprite icon , string name)
     {
         GameObject g = ObjectPooling.intant.CreateGameObject(product);
         g.GetComponent<Image>().sprite = icon;
+        g.name = name;
         g.transform.SetParent(products.transform);
     }
 }

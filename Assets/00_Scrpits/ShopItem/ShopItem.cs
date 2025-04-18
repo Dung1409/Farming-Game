@@ -42,4 +42,9 @@ public class ShopItem : MonoBehaviour
         UpdateInfo();   
     }
 
+    private void OnDisable()
+    {
+        quantity = 0;
+        UpdateInfo();
+    }
 }
